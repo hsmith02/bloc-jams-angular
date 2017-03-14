@@ -1,7 +1,6 @@
 (function() {
     function AlbumCtrl() {
         this.albumData = albumPicasso;
-        }
     }
     
     angular
