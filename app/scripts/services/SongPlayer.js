@@ -31,11 +31,27 @@
             currentSong = song;
         };
         
+        /**
+        * @function playSong
+        * @desc plays currentBuzzObject
+        * @param {object} song
+        */
+        
+        var playSong = function(song) {
+            currentBuzzObject.play();
+            song.playing = true;
+        };
+        
+        /**
+        * @function SongPlayer.play
+        * @desc if a song other than the current song or a paused song is clicked, play the clicked song
+        * @param {object} song
+        */
+        
         SongPlayer.play = function(song) {
             if (currentSong !== song) {
                 setSong(song);
-                currentBuzzObject.play();
-                song.playing = true;
+                playSong(song);
                 
             } else if (currentSong === song) {
                 if (currentBuzzObject.isPaused()) {
@@ -43,6 +59,12 @@
                 }
             } 
         };
+        
+        /**
+        * @function SongPlayer.pause
+        * @desc if pause button is clicked, pause the song
+        * @param {object} song
+        */
         
         SongPlayer.pause = function(song) {
             currentBuzzObject.pause();
