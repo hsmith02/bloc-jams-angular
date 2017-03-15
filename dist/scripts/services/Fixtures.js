@@ -37,11 +37,12 @@
         };
         
         Fixtures.getCollection = function(numberOfAlbums) {
-            this.albums = [];
+            albums = [];
             
             for (var i= 0; i < 12; i++) {
-                this.albums.push(Fixtures.getAlbum());
+                albums.push(Fixtures.getAlbum());
             }
+            return albums
         };
         
         return Fixtures;
