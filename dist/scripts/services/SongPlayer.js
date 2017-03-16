@@ -79,11 +79,10 @@
             song = song || SongPlayer.currentSong;
             if (SongPlayer.currentSong !== song) {
                 setSong(song);
-                playSong(song);
-                
+                playSong(song);  
             } else if (SongPlayer.currentSong === song) {
                 if (currentBuzzObject.isPaused()) {
-                    currentBuzzObject.play();
+                    playSong(song); 
                 }
             } 
         };
@@ -97,7 +96,7 @@
         SongPlayer.pause = function(song) {
             song = song || SongPlayer.currentSong;
             currentBuzzObject.pause();
-            song.Playing = false;
+            song.playing = false;
         };
         
         /**
